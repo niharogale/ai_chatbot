@@ -1,5 +1,5 @@
 'use client'
-import { Box, Button, Stack, TextField } from "@mui/material";
+import { Box, Button, Stack, TextField, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function Home() {
@@ -59,15 +59,20 @@ export default function Home() {
       flexDirection="column"
       justifyContent="center"
       alignItems="center"
+      sx={{
+        background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      }}
     >
       <Stack
         direction="column"
-        width="600px"
-        height="700px"
+        width="60vw"
+        height="70vh"
         border="1px solid black"
+        borderRadius="4px"
         p={2}
         spacing={3}
       >
+        <Typography variant="h2" textAlign="center">Personal Chatbot</Typography>
         <Stack
           direction="column"
           spacing={2}
@@ -85,7 +90,7 @@ export default function Home() {
             >
               <Box 
                 bgcolor={
-                  message.role==='assistant' ? 'primary.main' : 'secondary.main'
+                  message.role==='assistant' ? 'black' : 'gray'
                 } color='white' borderRadius={16} p={3}>
                 {message.content}
               </Box>
